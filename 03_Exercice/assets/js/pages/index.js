@@ -9,8 +9,6 @@ const courrielHTML = document.querySelector(".courriel");
 const ageHTML = document.querySelector(".age");
 const estMajeurHTML = document.querySelector(".est-majeur");
 
-// Exécution
-
 //Demander le courriel
 courriel = prompt("Veuillez saisir un courriel");
 
