@@ -11,16 +11,18 @@ Vous devez créer un script simple qui simule l'inscription d'un nouvel utilisat
     1. Si le courriel est vide, afficher un message d'erreur
     2. Enregistrer le courriel dans une variable
 
-2. Demander l'âge de l'utilisateur 2. Enregistrer l'âge dans une variable
-3. Demander à l'utilisateur de saisir un mot de passe
+2. Demander l'âge de l'utilisateur
+3. Enregistrer l'âge dans une variable
+
+4. Demander à l'utilisateur de saisir un mot de passe
     1. Si le mot de passe est vide, afficher un message d'erreur
     2. Enregistrer le mot de passe dans une variable
-4. Demander à l'utilisateur de confirmer le mot de passe une deuxième fois
+5. Demander à l'utilisateur de confirmer le mot de passe une deuxième fois
     1. Si le mot de passe de confirmation est différent du mot de passe, afficher un message d'erreur
     2. Enregistrer le mot de passe de confirmation dans une variable
-5. Afficher un message de confirmation si l'inscription est réussie
-6. Afficher les informations de l'utilisateur (courriel, âge et si l'utilisateur est majeur ) si l'inscription est réussie sur la page
+6. Afficher un message de confirmation si l'inscription est réussie
+7. Afficher les informations de l'utilisateur (courriel, âge et si l'utilisateur est majeur ) si l'inscription est réussie sur la page
 
-7. Commenter le script pour expliquer ce que vous avez fait
+8. Commenter le script pour expliquer ce que vous avez fait
 
-8. Tester le script avec des valeurs différentes pour vous assurer qu'il fonctionne correctement
+9. Tester le script avec des valeurs différentes pour vous assurer qu'il fonctionne correctement
