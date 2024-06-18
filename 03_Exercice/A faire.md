@@ -1,17 +1,16 @@
-# Exercice - cours 3 - Structures conditionnelles
+# Exercice - cours 4 - Les tableaux et les boucles
 
 ## Consignes
 
-Nous commençons à ajouter de l'interactivité à la page. Vous devrez donner de la rétroaction à l'utilisateur en utilisant les structures conditionnelles et les fonctions.
+Vous devez modifier plusieurs éléments HTML à partir d'un tableau de données, de fonctions et de boucles. De plus, vous devrez trier ces éléments au clic d'un bouton et les réafficher.
 
-## Étapes
+1. Sélectionnez tous les éléments `div` de la liste qui ont la classe `album__artiste` et enregistrez-les dans une seule variable.
 
-1. Sélectionner individuellement chaque div album. Essayez de trouver un moyen de les sélectionner sans modifier le HTML. Réviser l'aide-mémoire sur les sélecteurs CSS si nécessaire. (cours 1)
+2. Créer une fonction `afficherAlbums` servant à afficher les albums dans la page. Cette fonction prendra un deux paramètres : un tableau d'albums et une liste d'éléments HTML. Cette fonction contient une boucle qui utilise la fonction `modifierNom` pour afficher le nom de l'artiste dans chaque élément HTML.
 
-2. Écrire une fonction qui change le style de cet élément.
+3. Créer une fonction `modifierNom` servant à changer le texte d'un élément HTML. Cette fonction prendra deux paramètres : l'élément HTML à modifier et le texte à insérer dans cet élément.
 
-    Ajoutez une bordure de 5px de couleur rouge à l'élément si l'élément n'est pas sélectionné et retirez-la si l'élément est sélectionné.
+4. Créez une fonction `initialiser` qui sera appelée au chargement de la page. Appelez la fonction
+   `afficherAlbums` avec le tableau d'albums et la liste d'éléments HTML.
 
-    Trouvez une façon de garder en mémoire si chaque élément a déjà une bordure ou non, le code n'a pas besoin d'être optimal. Utilisez les structures conditionnelles pour cela et les opérateurs vus dans le cours 2.
-
-3. Ajouter un écouteur de clic à chaque div album. Lorsqu'on clique, déclenchez la fonction. Attention, on ne met pas les parenthèses après le nom de la fonction, sinon elle sera exécutée immédiatement.
+5. Au clic du bouton, triez les albums par ordre alphabétique et réaffichez-les dans la page.
