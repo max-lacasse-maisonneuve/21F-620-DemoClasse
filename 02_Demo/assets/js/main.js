@@ -1,28 +1,16 @@
-// Sélectionner plusieurs éléments HTML
-// Boucle for, forEach
+// Variables
 
-// Ajouter un élément au tableau
-// Supprimer un élément du tableau
-// Modifier un élément du tableau
-// Afficher un élément du tableau
-// Trouver un élément dans le tableau
-// Trier le tableau
-// Copier un tableau
+const chemin = ["assets", "img", "albums"];
+const albums = ["Mezzanine", "Back in Black", "The Dark Side of the Moon", "Abbey Road", "Kind of Blue", "The Wall"];
 
-//==================
-const nomsAlbums = ["Rumours", "Back in Black", "The Dark Side of the Moon", "Nevermind", "The Doors", "Mezzanine"];
-const prix = [15, 30, 15, 40, 18, 15];
+// const template = `
+// <div class="album" id="">
+//     <img src="assets/img/albums/doors_the_doors.webp" alt="" />
+// </div>`;
 
-// 1. Créer une fonction qui retourne le prix d'un album. La fonction prend en paramètre un tableau de noms d'album et un tableau de prix.
+// Créer une fonction qui formatte le chemin des images
+// Créer une fonction qui génère le template HTML et l'injecte dans le DOM
+// Créer une fonction qui affiche les albums au chargement de la page
 
-// 2. Créer une fonction qui prend en paramètre un tableau de noms d'album et qui retourne un nouveau tableau trié par ordre décroissant
-
-// 3. Créer une fonction qui prend en paramètre un tableau de prix et qui retourne un nouveau tableau sans les doublons
-
-// 4. Créer une fonction qui prend en paramètre un tableau de prix et qui retourne le prix moyen
-
-// 5. Créer une fonction qui retourne un nouveau tableau avec les noms des albums qui ont un prix supérieur à 20
-//===================
-
-// Techniques de débogage
-// opérateur type of
+// Au clic du bouton, vider le contenu du conteneur et réafficher les albums
+// Au clic d'une div album, afficher le id dans la console et afficher l'attribut alt de l'image dans la console
