@@ -15,3 +15,5 @@ Nous commençons à ajouter de l'interactivité à la page. Vous devrez donner d
     Trouvez une façon de garder en mémoire si chaque élément a déjà une bordure ou non, le code n'a pas besoin d'être optimal. Utilisez les structures conditionnelles pour cela et les opérateurs vus dans le cours 2.
 
 3. Ajouter un écouteur de clic à chaque div album. Lorsqu'on clique, déclenchez la fonction. Attention, on ne met pas les parenthèses après le nom de la fonction, sinon elle sera exécutée immédiatement.
+
+4. Ajouter un écouteur de double-clic à chaque div album. Lorsqu'on double-clique, déclenchez la fonction qui cache l'élément.
