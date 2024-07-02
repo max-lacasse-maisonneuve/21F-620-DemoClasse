@@ -1,14 +1,3 @@
-// Variables
-const objetTest = {
-    artiste: "Massive Attack",
-    album: "Mezzanine",
-    prix: 15,
-    annee: 1998,
-    genre: "rock",
-    enStock: false,
-    src: "assets/img/albums/mezzanine.webp",
-};
-
 const albums = [
     {
         id: 1,
@@ -93,21 +82,18 @@ const albums = [
     },
 ];
 
-// Accéder à une propriété avec la notation pointée
-// Accéder à la propriété  avec la notation par crochet
-// Afficher les propriétés de l'objet dans la console
-// Boucler sur les clés et les valeurs d'un objet
+//==== Éléments HTML
+const listeAlbumsHTML = document.querySelector(".liste-albums");
+const artisteSelection = document.querySelector(".artiste-selection");
+const liensPages = [
+    {
+        url: "index.html",
+        texte: "Accueil",
+    },
+    {
+        url: "contact.html",
+        texte: "Page contact",
+    },
+];
 
-// Modifier et supprimer les propriétés d'un objet
-// Objet prédéfinis Window, Document, Math, ElementHTML,
-
-//=== Live Share
-// Créer une fonction qui retourne un album au hasard
-
-// Créer une fonction qui cherche et retourne un album par nom d'album
-
-// Créer une fonction qui filtre les albums en stock
-
-// Créer une fonction qui trie les albums par prix croissant
-
-// Créer une fonction qui cherche et retourne tous les albums d'un artiste
+//Révision et débogage
