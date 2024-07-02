@@ -1,52 +1,73 @@
-// Variables
-const liensPiedPage = ["  Mentions légales", " Politique de confidentialité   ", " Plan du site   "];
-
-//Sélections HTML
-const piedPageHTML = document.querySelector(".listes-liens-secondaires ul");
-
-//Fonction appelée au chargement de la page
-function init() {
-    liensPiedPage.forEach(function (lien) {
-        console.log(lien);
-        injecterPiedPage(lien);
-    });
-}
-
-//Fonction de formattage des liens
-function formatterLien(lien) {
-    let lienFormatte = lien.trim(); //Nettoie le texte
-    lienFormatte = lienFormatte.toLowerCase(); //Met en minuscule
-
-    //Défi 1: Enlève les accents
-    lienFormatte = lienFormatte.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-
-    lienFormatte = lienFormatte.replaceAll(" ", "-"); //Remplace les espaces par des tirets
-    lienFormatte = `${lienFormatte}.html`; //Ajoute l'extension du lien
-
-    return lienFormatte;
-}
-
-//Fonction servant à injecter le lien sur la page
-function injecterPiedPage(lien) {
-    //On formatte le lien
-    let lienFormatte = formatterLien(lien);
-
-    //Le gabarit à injecter
-    let gabarit = `
-        <li>
-            <a href="${lienFormatte}"/>${lien}</a>
-        </li>`;
-
-    //On ajoute le lien sur la page
-    piedPageHTML.insertAdjacentHTML("beforeend", gabarit);
-
-    let lienAjoute = piedPageHTML.lastElementChild;
-
-    //Défi 2: afficher l'attribut href du lien en survol
-    lienAjoute.addEventListener("mouseenter", function () {
-        let href = lienAjoute.querySelector("a").href;
-        console.log(href);
-    });
-}
-
-init();
+// N'oubliez pas de structurer votre code correctement. Voir cours 3
+const albums = [
+    {
+        id: 1,
+        artiste: "The Beatles",
+        album: "Abbey Road",
+        prix: 20,
+        annee: 1969,
+        genre: "rock",
+        enStock: true,
+        src: "assets/img/albums/abbey_road.webp",
+    },
+    {
+        id: 2,
+        artiste: "Nirvana",
+        album: "Nevermind",
+        prix: 100,
+        annee: 1991,
+        genre: "rock",
+        enStock: true,
+        src: "assets/img/albums/nevermind.webp",
+    },
+    {
+        id: 3,
+        artiste: "Pink Floyd",
+        album: "The Dark Side of the Moon",
+        prix: 30,
+        annee: 1973,
+        genre: "rock",
+        enStock: true,
+        src: "assets/img/albums/the_dark_side_of_the_moon.webp",
+    },
+    {
+        id: 4,
+        artiste: "The Rolling Stones",
+        album: "Aftermath",
+        prix: 10,
+        annee: 1966,
+        genre: "rock",
+        enStock: true,
+        src: "assets/img/albums/aftermath.webp",
+    },
+    {
+        id: 5,
+        artiste: "The Doors",
+        album: "The Doors",
+        prix: 5,
+        annee: 1967,
+        genre: "rock",
+        enStock: false,
+        src: "assets/img/albums/the_doors.webp",
+    },
+    {
+        id: 6,
+        artiste: "Janis Joplin",
+        album: "Pearl",
+        prix: 20,
+        annee: 1971,
+        genre: "rock",
+        enStock: false,
+        src: "assets/img/albums/pearl.webp",
+    },
+    {
+        id: 7,
+        artiste: "Massive Attack",
+        album: "Mezzanine",
+        prix: 15,
+        annee: 1998,
+        genre: "rock",
+        enStock: false,
+        src: "assets/img/albums/mezzanine.webp",
+    },
+];

@@ -1,82 +1,113 @@
 // Variables
+const objetTest = {
+    artiste: "Massive Attack",
+    album: "Mezzanine",
+    prix: 15,
+    annee: 1998,
+    genre: "rock",
+    enStock: false,
+    src: "assets/img/albums/mezzanine.webp",
+};
 
-const chemin = ["assets", "img", "albums"];
 const albums = [
-    "Mezzanine",
-    "Back in Black",
-    "   The Dark Side of the Moon  ",
-    "Abbey Road",
-    "Kind of Blue",
-    "The Wall",
+    {
+        id: 1,
+        artiste: "The Beatles",
+        album: "Abbey Road",
+        prix: 20,
+        annee: 1969,
+        genre: "rock",
+        enStock: true,
+    },
+    {
+        id: 2,
+        artiste: "Nirvana",
+        album: "Nevermind",
+        prix: 100,
+        annee: 1991,
+        genre: "rock",
+        enStock: true,
+    },
+    {
+        id: 3,
+        artiste: "Pink Floyd",
+        album: "The Dark Side of the Moon",
+        prix: 30,
+        annee: 1973,
+        genre: "rock",
+        enStock: true,
+    },
+    {
+        id: 4,
+        artiste: "The Rolling Stones",
+        album: "Aftermath",
+        prix: 10,
+        annee: 1966,
+        genre: "rock",
+        enStock: true,
+    },
+    {
+        id: 5,
+        artiste: "The Doors",
+        album: "The Doors",
+        prix: 5,
+        annee: 1967,
+        genre: "rock",
+        enStock: false,
+    },
+    {
+        id: 6,
+        artiste: "Janis Joplin",
+        album: "Pearl",
+        prix: 20,
+        annee: 1971,
+        genre: "rock",
+        enStock: false,
+    },
+    {
+        id: 7,
+        artiste: "Massive Attack",
+        album: "Mezzanine",
+        prix: 15,
+        annee: 1998,
+        genre: "rock",
+        enStock: false,
+    },
+    {
+        id: 8,
+        artiste: "The Beatles",
+        album: "Sgt. Pepper's Lonely Hearts Club Band",
+        prix: 25,
+        annee: 1967,
+        genre: "rock",
+        enStock: true,
+    },
+    {
+        id: 9,
+        artiste: "Massive Attack",
+        album: "Blue Lines",
+        prix: 15,
+        annee: 1991,
+        genre: "rock",
+        enStock: false,
+    },
 ];
 
-// const template = `
-// <div class="album" id="">
-//     <img src="assets/img/albums/doors_the_doors.webp" alt="" />
-// </div>`;
+// Accéder à une propriété avec la notation pointée
+// Accéder à la propriété  avec la notation par crochet
+// Afficher les propriétés de l'objet dans la console
+// Boucler sur les clés et les valeurs d'un objet
 
-const conteneurAlbumHTML = document.querySelector(".liste-albums");
+// Modifier et supprimer les propriétés d'un objet
+// Objet prédéfinis Window, Document, Math, ElementHTML,
 
-//Fonction qui est appelée au chargement du fichier
-// Créer une fonction qui affiche les albums au chargement de la page
-function init() {
-    albums.forEach(function (album, index) {
-        let albumHTML = ajouterAlbumHTML(album);
-        console.log(albumHTML);
-    });
-}
+//=== Live Share
+// Créer une fonction qui retourne un album au hasard
 
-// Créer une fonction qui formatte le chemin des images
-function formatterChemin(tableauChemin) {
-    let chemin = "";
-    //Joindre les éléments du tableau
-    chemin = `${tableauChemin.join("/")}/`; //Join crée une chaine de caractère
+// Créer une fonction qui cherche et retourne un album par nom d'album
 
-    //Retourner une chaine avec la base du chemin
-    return chemin;
-}
+// Créer une fonction qui filtre les albums en stock
 
-//Créer une fonction qui formatte la source de l'image d'un album
-function formatterNomAlbum(nomAlbum) {
-    //Récupérer la base des images
-    let base = formatterChemin(chemin);
+// Créer une fonction qui trie les albums par prix croissant
 
-    //Nettoyer les espaces avant ou arrières
-    let nomNettoye = nomAlbum.trim();
-
-    //Mettre en minuscule
-    nomNettoye = nomNettoye.toLowerCase();
-    //Remplacer les espaces par des _
-
-    nomNettoye = nomNettoye.replaceAll(" ", "_");
-    //Retourner la source de l'image. Ex: assets/img/albums/doors_the_doors.webp
-    let sourceImage = `${base}${nomNettoye}.webp`;
-
-    return sourceImage;
-}
-
-// Créer une fonction qui génère le template HTML et l'injecte dans le DOM
-function ajouterAlbumHTML(nomAlbum) {
-    let sourceImage = formatterNomAlbum(nomAlbum);
-    const template = `
-        <div class="album" id="">
-            <img src="${sourceImage}" alt="Image pour l'album ${nomAlbum}" />
-        </div>`;
-
-    conteneurAlbumHTML.insertAdjacentHTML("beforeend", template);
-
-    let elementHTML = conteneurAlbumHTML.lastElementChild;
-    elementHTML.addEventListener("click", function () {
-        elementHTML.style.border = "2px solid tomato";
-    });
-    // Au clic d'une div album, afficher le id dans la console et afficher l'attribut alt de l'image dans la console
-    return elementHTML;
-}
-
-const img = document.querySelector("img");
-img.src = "sldf/sdfsdf/sdf.webp"
-let src = img.src
-// Au clic du bouton, vider le contenu du conteneur, trier et réafficher les albums
-
-//Exécution
-init();
+// Créer une fonction qui cherche et retourne tous les albums d'un artiste
