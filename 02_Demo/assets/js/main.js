@@ -82,9 +82,6 @@ const albums = [
     },
 ];
 
-//==== Éléments HTML
-const listeAlbumsHTML = document.querySelector(".liste-albums");
-const artisteSelection = document.querySelector(".artiste-selection");
 const liensPages = [
     {
         url: "index.html",
@@ -96,4 +93,71 @@ const liensPages = [
     },
 ];
 
-//Révision et débogage
+//==== Éléments HTML
+const listeAlbumsHTML = document.querySelector(".liste-albums");
+const artisteSelection = document.querySelector(".artiste-selection");
+const boutonTriAsc = document.querySelector(".tri-asc");
+const boutonFiltre = document.querySelector(".filtre");
+
+// Fonctions
+function init() {
+    // debugger;
+    afficherListe(albums);
+
+    boutonFiltre.addEventListener("click", function () {
+        filtrerParPrixMin(15);
+    });
+
+    boutonTriAsc.addEventListener("click", function () {
+        trier(albums, "asc");
+    });
+}
+
+function afficherListe(tableauAlbum) {
+    viderListe();
+
+    tableauAlbum.forEach(function (album) {
+        let gabarit = `
+        <div class="album">
+            <h3>${album.artiste}</h3>
+        </div>`;
+
+        listeAlbumsHTML.insertAdjacentHTML("beforeend", gabarit);
+        let elementAjoute = listeAlbumsHTML.lastElementChild;
+        console.dir(listeAlbumsHTML);
+        // debugger;
+        elementAjoute.addEventListener("click", function () {
+            afficherDetail(album);
+        });
+    });
+}
+
+function viderListe() {
+    listeAlbumsHTML.innerHTML = "";
+}
+
+function afficherDetail(album) {
+    artisteSelection.textContent = album.artiste;
+}
+
+function trier(tableau, direction) {
+    let copie = [...tableau]; //Copie
+    if (direction == "asc") {
+        copie.sort(function (a, b) {
+            if (a.artiste < b.artiste) {
+                return -1;
+            } else {
+                return 1;
+            }
+        });
+    }
+    console.log(copie);
+    afficherListe(copie);
+}
+
+function filtrerParPrixMin(prixMin) {}
+
+function filtrerParArtiste(artiste) {}
+
+//Exécution
+init();
