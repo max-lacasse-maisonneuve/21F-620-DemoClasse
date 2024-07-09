@@ -3,40 +3,26 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Cours 4</title>
         <link rel="stylesheet" href="assets/css/styles.css" />
-        <link rel="shortcut icon" href="assets/img/logo_vinyle.png" type="image/x-icon" />
-        <script src="assets/js/main.js" defer></script>
+        <script src="assets/js/pages/index.js" defer></script>
+        <title>Révision</title>
     </head>
     <body>
         <header>
             <nav id="nav-principale">
-                <img src="assets/img/logo_vinyle.png" alt="logo" class="logo" />
-                <ul class="nav__liste">
-                    <li><a href="#" style="color: tomato; text-decoration: underline">Accueil</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">À propos</a></li>
-                </ul>
+                <ul class="nav__liste"></ul>
             </nav>
         </header>
         <main>
             <section>
-                <h1>Liste des albums</h1>
                 <div class="section-header">
+                    <h1>Liste des étudiants</h1>
                     <div class="filtres">
-                        <div class="filtre">Filtrer les albums de 15$ et moins</div>
-                        <div class="tri tri-asc">Trier par ordre alphabétique croissant</div>
-                        <div class="tri tri-desc">Trier par ordre alphabétique décroissant</div>
+                        <div class="bouton tri" id="tri-nom" data-type="nom">Par ordre alphabétique (A-Z)</div>
+                        <div class="bouton supprimer" id="supprimer">Supprimer dernier étudiant</div>
                     </div>
                 </div>
-
-                <section>
-                    <h2>Album sélectionné</h2>
-                    <p>Artiste:<span class="artiste-selection"></span></p>
-                </section>
-                <div class="liste-albums">
-                    <!-- <div class="album"><h3>Artiste test</h3></div> -->
-                </div>
+                <div class="grille-étudiant"></div>
             </section>
         </main>
     </body>
