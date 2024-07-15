@@ -60,6 +60,8 @@ Ces propriétés permettent de rechercher les enfants, l'élément adjacent suiv
 
 ```javascript
 let children = element.children;
+let dernierEnfant = element.lastElementChild;
+let premierEnfant = element.firstElementChild;
 let nextSibling = element.nextElementSibling;
 let previousSibling = element.previousElementSibling;
 ```
