@@ -60,8 +60,6 @@ Ces propriétés permettent de rechercher les enfants, l'élément adjacent suiv
 
 ```javascript
 let children = element.children;
-let firstChild = element.firstElementChild;
-let lastChild = element.lastElementChild;
 let nextSibling = element.nextElementSibling;
 let previousSibling = element.previousElementSibling;
 ```
@@ -70,15 +68,15 @@ let previousSibling = element.previousElementSibling;
 
 #### parentNode
 
-La propriété `parentElement` permet de rechercher l'élément parent d'un élément. Elle renvoie `null` si l'élément n'a pas de parent.
+La propriété `parentNode` permet de rechercher l'élément parent d'un élément. Elle renvoie `null` si l'élément n'a pas de parent.
 
 ```javascript
-let parent = element.parentElement;
+let parent = element.parentNode;
 ```
 
 #### closest
 
-Pour chercher plus haut dans l'arbre, on peut utiliser la méthode `closest`. Elle permet de rechercher l'élément parent le plus proche qui correspond à un sélecteur CSS. Elle renvoie `null` si aucun élément ne correspond. C'est un peu l'inverse de `querySelector`.
+Pour chercher plus haut dans l'arbre, on peut utiliser la méthode `closest`. Elle permet de rechercher l'élément parent le plus proche qui correspond à un sélecteur CSS. Elle renvoie `null` si aucun élément ne correspond.
 
 ```javascript
 let parent = element.closest(".my-class"); // Cherche l'élément parent le plus proche qui a la classe "my-class"
@@ -122,7 +120,7 @@ element.innerHTML = "<h2>Hello, world!</h2>";
 
 #### insertAdjacentHTML
 
-La méthode `insertAdjacentHTML` permet d'insérer du contenu HTML à un endroit spécifique dans un élément. Elle est plus sûre que `innerHTML` car elle ne supprime pas le contenu HTML existant, elle l'ajoute simplement. On utilise cette méthode pour ajouter du contenu HTML depuis une chaîne de caractères dans le code JavaScript.
+La méthode `insertAdjacentHTML` permet d'insérer du contenu HTML à un endroit spécifique dans un élément. Elle est plus sûre que `innerHTML` car elle ne supprime pas le contenu HTML existant, elle l'ajoute simplement.
 
 La méthode prend deux arguments. Le premier argument est une chaîne de caractères qui spécifie où insérer le contenu.
 
@@ -145,40 +143,22 @@ La méthode `cloneNode` permet de cloner un élément. Elle prend un argument bo
 
 Cloner implique plus de travail mais permet de séparer le code HTML du JavaScript. La balise servant à cloner doit être cachée dans le HTML.
 
-Pour modifier les attributs ou ajouter des écoutants d'événements, il faut d'abord cloner l'élément, l'ajouter au DOM, puis modifier les attributs ou ajouter les écouteurs d'événements en récupérant le dernier élément ajouté.
-
-Pour ajouter un élément cloné à un élément parent, il faut utiliser la méthode `append`.
-
 ```html
-<div class="gabarit">
-    <h1>Titre</h1>
-    <h2>Sous-titre</h2>
-</div>
-<div class="conteneur"></div>
+<template id="my-template">
+    <h1>Hello, world!</h1>
+</template>
 ```
 
 ```javascript
-let gabarit = document.querySelector(".gabarit");
+let template = document.getElementById("my-template");
 let conteneur = document.querySelector(".conteneur");
 
-// Cloner le gabarit, true pour cloner les enfants aussi
-let clone = gabarit.cloneNode(true);
+let clone = template.content.cloneNode(true); // Cloner le contenu du template
+clone.querySelector("h1").textContent = "Bonjour, monde!"; // Modifier le texte de l'élément h1
+clone.classList.add("my-class"); // Ajouter une classe "my-class"
+clone.dataset.name = "Malek"; // Ajouter un attribut data-name="Malek"
 
-// Modifier le titre et le sous-titre du clone
-let titre = clone.querySelector("h1");
-titre.textContent = "Nouveau titre";
-
-let sousTitre = clone.querySelector("h2");
-sousTitre.textContent = "Nouveau sous-titre";
-
-// On peut ajouter un écouteur d'événement sur le clone
-clone.addEventListener("click", function () {
-    console.log("Cliqué");
-});
-
-// Ajoute le clone à la fin du conteneur, on utilise prepend pour ajouter au début
-// Obligatoire sinon le clone reste dans le vide
-conteneur.append(clone);
+conteneur.appendChild(clone); // Ajouter le clone à la fin du conteneur
 ```
 
 #### balise html template
@@ -194,12 +174,9 @@ Lorsqu'on sélectionne un élément avec `document.querySelector`, il faut utili
 ```
 
 ```javascript
-let conteneur = document.querySelector(".conteneur");
 let template = document.getElementById("my-template");
-
 let contenu = template.content;
 let clone = contenu.cloneNode(true);
-conteneur.append(clone);
 ```
 
 ### Supprimer un élément HTML
@@ -211,31 +188,4 @@ La méthode `remove` permet de supprimer un élément du DOM. Elle est très sim
 ```javascript
 let element = document.querySelector(".my-class");
 element.remove();
-```
-
-Il est possible de supprimer tous les enfants d'un élément en utilisant la propriété `children` et une boucle `for`.
-
-```javascript
-let enfants = document.querySelectorAll(".my-class > *");
-
-enfants.forEach(function (enfant) {
-    enfant.remove();
-});
-
-// OU
-let element = document.querySelector(".my-class");
-let enfants = element.children;
-
-while (enfants.length > 0) {
-    element.lastElementChild.remove();
-}
-```
-
-### supprimer les enfants avec innerHTML
-
-Il est possible de supprimer un élément en utilisant la propriété `innerHTML`. Il suffit de définir `innerHTML` sur une chaîne de caractères vide. Cela supprime tout le contenu HTML de l'élément.
-
-```javascript
-let element = document.querySelector(".my-class");
-element.innerHTML = "";
 ```
