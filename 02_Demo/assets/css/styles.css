@@ -270,4 +270,5 @@ section nav {
 }
 /* AJOUTER DES CLASSES POUR CACHER et DÉSACTIVER */
 .invisible {
+    display: none;
 }

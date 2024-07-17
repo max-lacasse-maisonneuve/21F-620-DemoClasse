@@ -223,3 +223,7 @@ main {
     transform: scale(1.05);
     color: color-mix(in oklab, tomato 80%, black 20%);
 }
+
+.invisible {
+    display: none;
+}
