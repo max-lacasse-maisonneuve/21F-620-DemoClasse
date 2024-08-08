@@ -1,73 +1,29 @@
 // Variables
 let sectionActuelle = 0;
-let estValide = false;
+let formulaireValide = false;
+const donnees = {};
 
 // Éléments HTML
-// - Formulaire
-const formulaire = document.querySelector("form");
-
-// - Sections
-const sections = formulaire.querySelectorAll("section");
-
-// - Boutons
-const boutonsAvancer = formulaire.querySelectorAll("[data-direction='1']");
-const boutonsReculer = formulaire.querySelectorAll("[data-direction='-1']");
+const formulaire = document.querySelector("#formulaire-principal");
+const sectionResume = document.querySelector(".resume");
 
 //Fonctions
 function init() {
-    boutonsAvancer.forEach(function (bouton) {
-        bouton.addEventListener("click", avancerSection);
-    });
-
-    formulaire.addEventListener("submit", onSubmit);
-    // toutCacher();
-    afficherSection();
+  formulaire.addEventListener("submit", onSubmit);
 }
 
 function onSubmit(evenement) {
-    evenement.preventDefault();
+  evenement.preventDefault();
 
-    // console.log("submit", evenement);
-    //TODO: Valider le formulaire
-
-    if (estValide == true) {
-        formulaire.submit();
-    }
+  if (formulaireValide) {
+    // formulaire.submit();
+    // formulaire.reset();
+  }
 }
 
-//Désactiver le bouton précédent si on est sur la première section
-//Désactiver le bouton suivant si on est sur la dernière section
-function afficherSection() {
-    // toutCacher();
-    sections[sectionActuelle].classList.remove("invisible");
-}
+function onChangementChamp(evenement) {}
 
-function test(paramTest, evenement) {
-    const declencheur = evenement.currentTarget;
-    declencheur.classList.add("invisible");
-    console.log(declencheur);
-    console.log(paramTest);
-}
-
-function toutCacher() {
-    sections.forEach(function (element) {
-        element.classList.add("invisible");
-    });
-}
-
-function avancerSection(evenement) {
-    const declencheur = evenement.currentTarget;
-    sectionActuelle++;
-    // if(sectionActuelle >= sections.length){
-    //     return;
-    // }
-
-    if (sectionActuelle < sections.length) {
-        afficherSection();
-    }
-}
-
-function reculerSection() {}
+function afficherResume(nomChamp, valeur) {}
 
 // Exécution
 init();
