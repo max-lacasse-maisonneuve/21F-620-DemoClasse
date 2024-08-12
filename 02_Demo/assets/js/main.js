@@ -49,6 +49,7 @@ function onChangementChamp(evenement) {
     if (estValide) {
         // Cacher les erreurs au besoin
         // - Modifier le résumé (Voir cours 11)
+        // afficherResume(name, value);
     } else {
         // Si le champ est invalide, afficher les erreurs du champs
     }
@@ -84,5 +85,21 @@ function validerFormulaire() {
     //On valide chaque section
 }
 
+function afficherResumeCheckbox(nomChamp, estCoche) {
+  const champResume = sectionResume.querySelector(`[data-name="${nomChamp}"]`);
+  // console.log(champResume);
+  if (champResume !== null) {
+      let texte = estCoche ? "OUI" : "NON";
+      champResume.textContent = texte;
+  }
+}
+
+function afficherResume(nomChamp, valeur) {
+  const champResume = sectionResume.querySelector(`[data-name="${nomChamp}"]`);
+  // console.log(champResume);
+  if (champResume !== null) {
+      champResume.textContent = valeur;
+  }
+}
 // Exécution
 init();
