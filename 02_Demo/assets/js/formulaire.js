@@ -13,7 +13,7 @@ const boutonsReculer = formulaire.querySelectorAll("[data-direction='-1']");
 
 // TODO: Voir CSS pour cacher les messages d'erreurs
 
-//Fonctions
+// Fonctions
 function init() {
     formulaire.addEventListener("submit", onSubmit);
     //TODO: Écouteurs événement pour les boutons de navigation
@@ -43,7 +43,7 @@ function onChangementChamp(evenement) {
     const value = declencheur.value;
     const checked = declencheur.checked;
 
-    //Gestion des champs exceptions
+    //Gestion des champs avec exceptions
     if (type == "checkbox") {
         //Activer le champs date
     } else if (name == "couleur-pref") {
@@ -51,44 +51,42 @@ function onChangementChamp(evenement) {
     }
 
     const estValide = false;
-    // Validation de la section
-    // Si le champs est valide
+    // Validation du champ
+
     if (estValide) {
         // Cacher les erreurs au besoin
         // Modifier le résumé (Voir cours 11)
-    } else {
-        // Si le champ est invalide, afficher les erreurs du champs
+        // Récupérer la section parent
+        // On vérifie la section et on active le bouton suivant au besoin
     }
-
-    // Valider le reste de la section
-    // const section = declencheur.closest("section[data-page]");
-    // validerSection(section);
 }
+
+//=============================================
+// VALIDATION - Cours 12
+//=============================================
 
 function validerChamp(champ) {
     // Affiche le message d'erreur du navigateur
     // Donne de la rétroaction en ajoutant ou enlevant une classe CSS invalide
-    // Si valide, vérifie la section
-    //Retourne si le champ est valide
+    //
+    // Retourne booleen si le champ est valide
 }
 
 function validerSection(section) {
-    //On initialise un tableau vide
+    // On initialise un tableau vide
     const validations = [];
 
-    //Trouve les champs de la section avec un attribut name
+    // Trouve les champs de la section avec un attribut name
 
-    //On vérifie chacun des champs et sa validité
-    let sectionValide = false;
+    // On vérifie chacun des champs et sa validité
 
-    //Affiche de la retroaction a l'utilisateur
-    //On ajoute la classe invalide
-
-    //On retourne un booleen indiquant si la section est valide ou non
+    // On active ou non la navigation vers la section suivante
+    // On ajoute la classe invalide à la section
 }
 
 function validerFormulaire() {
-    //On valide chaque section
+    // On valide chaque section
+    // On retourne un booleen
 }
 
 //=============================================
@@ -104,7 +102,7 @@ function afficherResume(nomChamp, valeur) {
 }
 
 //=============================================
-// AFFICHAGE et NAVIGATION - Cours 10
+// AFFICHAGE DES SECTIONS et NAVIGATION - Cours 10
 //=============================================
 
 function afficherSection() {
