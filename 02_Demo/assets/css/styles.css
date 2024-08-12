@@ -212,7 +212,6 @@ form .groupe-champs {
     margin-bottom: 0.5rem;
 }
 form input {
-    padding: 0.5rem;
     border-radius: 5px;
     border: 2px solid tomato;
     outline: none;
@@ -248,6 +247,35 @@ form button:disabled {
 }
 
 /* TODO: champs invalide et valide */
+/* form :required {
+    border: 2px solid cornflowerblue;
+} */
+
+/* form :invalid {
+  border: 4px solid red;
+}
+form :invalid + p {
+  display: none;
+}
+
+form :valid {
+  border: 2px solid lime;
+}
+form :valid + p {
+  display: initial;
+} */
+
+/* form [name] + p.error-message {
+    display: none;
+}
+
+form .invalid + p.error-message {
+    display: initial;
+} */
+
+form .invalid {
+    border: 4px solid red;
+}
 
 section {
     width: 90vw;
@@ -258,11 +286,19 @@ section {
     flex-direction: column;
 }
 
+section[data-page].invalid {
+    border: 5px dotted firebrick;
+}
+
 section nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: auto;
+}
+.disabled {
+    background-color: grey;
+    pointer-events: none;
 }
 .invisible {
     display: none;
