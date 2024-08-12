@@ -247,6 +247,20 @@ form button:disabled {
     pointer-events: none;
 }
 
+form input:invalid,
+form textarea:invalid,
+form select:invalid {
+    border-color: red;
+    border-width: 5px;
+}
+
+form input:valid,
+form textarea:valid,
+form select:valid {
+    border-color: lime;
+    border-width: 5px;
+}
+
 /* TODO: champs invalide et valide */
 
 section {
@@ -264,6 +278,12 @@ section nav {
     align-items: center;
     margin-top: auto;
 }
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.4;
+}
+
 .invisible {
     display: none;
 }
