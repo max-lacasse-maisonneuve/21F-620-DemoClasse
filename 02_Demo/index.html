@@ -11,8 +11,9 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         />
+        <link rel="shortcut icon" href="assets/img/logo_vinyle.png" type="image/x-icon" />
         <link rel="stylesheet" href="assets/css/styles.css" />
-        <script src="assets/js/main.js" defer></script>
+        <script src="assets/js/formulaire.js" defer></script>
     </head>
     <body>
         <header>
@@ -73,6 +74,45 @@
                     <nav class="navigation-section">
                         <div class="bouton" data-direction="-1">Précédent</div>
                         <div class="bouton" data-direction="1">Suivant</div>
+                    </nav>
+                </section>
+
+                <section class="resume" data-page="3">
+                    <h2>Résumé</h2>
+                    <p>
+                        Text:
+                        <span data-name="text"></span>
+                    </p>
+                    <p>
+                        Password:
+                        <span data-name="password"></span>
+                    </p>
+                    <p>
+                        Tel:
+                        <span data-name="tel"></span>
+                    </p>
+                    <p>
+                        Email:
+                        <span data-name="email"></span>
+                    </p>
+
+                    <p>
+                        Date:
+                        <span data-name="date"></span>
+                    </p>
+
+                    <p>
+                        Range:
+                        <span data-name="range"></span>
+                    </p>
+                    <p>
+                        Boite à cocher:
+                        <span data-name="checkbox"></span>
+                    </p>
+
+                    <nav class="navigation-section">
+                        <div class="bouton" data-direction="-1">Précédent</div>
+                        <input type="submit" class="bouton" value="Envoyer le formulaire" />
                     </nav>
                 </section>
             </form>

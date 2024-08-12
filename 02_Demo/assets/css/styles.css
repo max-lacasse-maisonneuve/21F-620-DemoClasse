@@ -296,6 +296,8 @@ section nav {
     align-items: center;
     margin-top: auto;
 }
+
+/* Exception et affichage. Placer à la fin */
 .disabled {
     background-color: grey;
     pointer-events: none;

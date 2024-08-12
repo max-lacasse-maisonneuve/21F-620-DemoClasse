@@ -1,11 +1,11 @@
 // Variables
 let formulaireValide = false;
-const donnees = {};
 
 // Éléments HTML
 const formulaire = document.querySelector("#formulaire-principal");
 const champs = formulaire.querySelectorAll("input, textarea,select");
 const sections = formulaire.querySelectorAll("section[data-page]");
+const sectionResume = formulaire.querySelector(".resume");
 
 // - Boutons
 const boutonsAvancer = formulaire.querySelectorAll("[data-direction='1']");
@@ -55,8 +55,7 @@ function onChangementChamp(evenement) {
     // Si le champs est valide
     if (estValide) {
         // Cacher les erreurs au besoin
-        // - Modifier le résumé (Voir cours 11)
-        // afficherResume(name, value);
+        // Modifier le résumé (Voir cours 11)
     } else {
         // Si le champ est invalide, afficher les erreurs du champs
     }
@@ -92,14 +91,9 @@ function validerFormulaire() {
     //On valide chaque section
 }
 
-function afficherResumeCheckbox(nomChamp, estCoche) {
-    const champResume = sectionResume.querySelector(`[data-name="${nomChamp}"]`);
-    // console.log(champResume);
-    if (champResume !== null) {
-        let texte = estCoche ? "OUI" : "NON";
-        champResume.textContent = texte;
-    }
-}
+//=============================================
+// AFFICHAGE DE LA SECTION RESUME - Cours 11
+//=============================================
 
 function afficherResume(nomChamp, valeur) {
     const champResume = sectionResume.querySelector(`[data-name="${nomChamp}"]`);
@@ -110,7 +104,7 @@ function afficherResume(nomChamp, valeur) {
 }
 
 //=============================================
-// AFFICHAGE et NAVIGATION Cours 10
+// AFFICHAGE et NAVIGATION - Cours 10
 //=============================================
 
 function afficherSection() {
@@ -135,7 +129,7 @@ function avancerSection(evenement) {
     }
 }
 
-//TODO: Fonction pour reculer à la section précédente
+//TODO: Créer une fonction pour reculer à la section précédente
 
 // Exécution
 init();
