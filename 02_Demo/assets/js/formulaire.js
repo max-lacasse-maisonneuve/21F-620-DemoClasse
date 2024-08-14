@@ -6,25 +6,32 @@ const formulaire = document.querySelector("#formulaire-principal");
 const champs = formulaire.querySelectorAll("[name]");
 const sections = formulaire.querySelectorAll("section[data-page]");
 const sectionResume = formulaire.querySelector(".resume");
-
+const champVille = formulaire.querySelector("[name='ville']");
+const listeVilles = formulaire.querySelector(".liste-villes");
 // - Boutons
 const boutonsAvancer = formulaire.querySelectorAll("[data-direction='1']");
 const boutonsReculer = formulaire.querySelectorAll("[data-direction='-1']");
 
-// Voir CSS pour cacher les messages d'erreurs
+//TODO: Pattern pour numéro de téléphone
+//TODO: Formatter les champs et remplacer la valeur
+//Texte vide
 
 // Fonctions
 function init() {
     formulaire.addEventListener("submit", onSubmit);
-    //TODO: Écouteurs événement pour les boutons de navigation
 
     champs.forEach(function (element) {
         element.addEventListener("change", onChangementChamp);
     });
 
-    // Valider la première section au chargement de la page
-
-    //TODO: Afficher la première section au chargement et cacher les autres
+    //TODO: Pourquoi focus, blur
+    champVille.addEventListener("focus", onFocusRecherche);
+    champVille.addEventListener("blur", onBlurRecherche);
+    listeVilles.addEventListener("mousedown", function (event) {
+        //TODO: MouseDown arrive avant blur, à choisir avant click
+        //Trouver la ville cliquée et modifier la valeur du champ de recherche
+        //Valider la section
+    });
 }
 
 function onSubmit(evenement) {
@@ -91,11 +98,28 @@ function onChangementChamp(evenement) {
         });
         console.log(tableauValidation);
         const sectionInvalide = tableauValidation.includes(false);
+
         if (sectionInvalide == true) {
             sectionParent.querySelector(".bouton[data-direction='1']").classList.add("disabled");
+        } else {
+            sectionParent.querySelector(".bouton[data-direction='1']").classList.remove("disabled");
         }
         // On vérifie la section et on active le bouton suivant au besoin
     }
+}
+
+function onFocusRecherche() {
+    //TODO: Ajouter un écouteur événement clavier
+    //TODO: Afficher la liste de choix
+}
+function onBlurRecherche(event) {
+    //TODO: Enlever un écouteur événement clavier
+    //TODO: Retirer la liste de choix
+}
+function onKeyUpRecherche(event) {
+    //TODO: Récupérer la valeur saisie dans la recherche
+    //TODO: Afficher les choix dans la liste
+    //TODO: Mettre en minuscule et trim, includes
 }
 
 //=============================================

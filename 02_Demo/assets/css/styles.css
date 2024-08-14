@@ -269,7 +269,6 @@ form [name] + p.error-message {
     display: none;
 }
 
-
 form .invalid + p.error-message {
     display: initial;
 }
@@ -298,6 +297,39 @@ section nav {
     margin-top: auto;
 }
 
+.recherche-villes {
+    position: relative;
+}
+
+.recherche-villes input {
+    padding: 0.5rem;
+    width: 100%;
+}
+
+.liste-villes {
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    padding: 1rem;
+    width: 50%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 666;
+    background-color: white;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.liste-villes {
+    list-style: none;
+}
+.liste-villes li {
+    padding: 1rem;
+}
+.liste-villes li:hover {
+    cursor: pointer;
+    background-color: tomato;
+    color: white;
+}
 /* Exception et affichage. Placer à la fin */
 .disabled {
     background-color: grey;

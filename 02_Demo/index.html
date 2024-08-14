@@ -29,7 +29,7 @@
             </nav>
         </header>
         <main>
-            <form action="" method="get" id="formulaire-principal">
+            <form action="" method="get" id="formulaire-principal" autocomplete="off">
                 <section data-page="1">
                     <h2>Section 1</h2>
 
@@ -53,7 +53,25 @@
                             name="code-postal"
                             pattern="[A-z][0-9][A-z]\s?[0-9][A-z][0-9]"
                         />
-                        <p class="error-message">Vous devez saisir un courriel valide</p>
+                        <p class="error-message">Vous devez saisir un code postal valide</p>
+                    </div>
+
+                    <div class="groupe-champs">
+                        <label for="telephone">Téléphone</label>
+                        <input type="tel" id="telephone" name="telephone" />
+                        <p class="error-message">Vous devez saisir un numéro de téléphone valide</p>
+                    </div>
+
+                    <div class="groupe-champs recherche-villes">
+                        <label for="villes">Recherche de la ville</label>
+                        <input type="search" name="ville" id="villes" autocomplete="false" a />
+                        <ul class="liste-villes invisible">
+                            <li data-ville="Paris">Paris</li>
+                            <li data-ville="Lyon">Lyon</li>
+                            <li data-ville="Marseille">Marseille</li>
+                            <li data-ville="Nantes">Nantes</li>
+                            <li data-ville="Lille">Lille</li>
+                        </ul>
                     </div>
                     <nav class="navigation-section">
                         <div class="bouton" data-direction="-1">Précédent</div>
