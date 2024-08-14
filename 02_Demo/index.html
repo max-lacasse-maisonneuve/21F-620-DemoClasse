@@ -35,7 +35,7 @@
 
                     <div class="groupe-champs">
                         <label for="nom">Nom</label>
-                        <input type="text" id="nom" name="nom" maxlength="50" required />
+                        <input type="text" id="nom" name="nom" minlength="3" maxlength="150" required />
                         <p class="error-message">Vous devez saisir votre nom</p>
                     </div>
 
@@ -45,6 +45,16 @@
                         <p class="error-message">Vous devez saisir un courriel valide</p>
                     </div>
 
+                    <div class="groupe-champs">
+                        <label for="code-postal">Code postal</label>
+                        <input
+                            type="text"
+                            id="code-postal"
+                            name="code-postal"
+                            pattern="[A-z][0-9][A-z]\s?[0-9][A-z][0-9]"
+                        />
+                        <p class="error-message">Vous devez saisir un courriel valide</p>
+                    </div>
                     <nav class="navigation-section">
                         <div class="bouton" data-direction="-1">Précédent</div>
                         <div class="bouton" data-direction="1">Suivant</div>
@@ -68,7 +78,7 @@
                     </div>
                     <div class="groupe-champs">
                         <label for="date">Date</label>
-                        <input type="date" id="date" name="date" disabled />
+                        <input type="date" id="date" name="date" min="2024-08-14" disabled />
                     </div>
 
                     <nav class="navigation-section">

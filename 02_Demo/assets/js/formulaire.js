@@ -3,7 +3,7 @@ let formulaireValide = false;
 
 // Éléments HTML
 const formulaire = document.querySelector("#formulaire-principal");
-const champs = formulaire.querySelectorAll("input, textarea,select");
+const champs = formulaire.querySelectorAll("[name]");
 const sections = formulaire.querySelectorAll("section[data-page]");
 const sectionResume = formulaire.querySelector(".resume");
 
@@ -11,7 +11,7 @@ const sectionResume = formulaire.querySelector(".resume");
 const boutonsAvancer = formulaire.querySelectorAll("[data-direction='1']");
 const boutonsReculer = formulaire.querySelectorAll("[data-direction='-1']");
 
-// TODO: Voir CSS pour cacher les messages d'erreurs
+// Voir CSS pour cacher les messages d'erreurs
 
 // Fonctions
 function init() {
@@ -29,8 +29,10 @@ function init() {
 
 function onSubmit(evenement) {
     evenement.preventDefault();
-
+    formulaireValide = formulaire.checkValidity();
     if (formulaireValide) {
+        console.log("Tout est tiguidou");
+
         // formulaire.submit();
         // formulaire.reset();
     }
@@ -46,17 +48,52 @@ function onChangementChamp(evenement) {
     //Gestion des champs avec exceptions
     if (type == "checkbox") {
         //Activer le champs date
-    } else if (name == "couleur-pref") {
+        const champDate = formulaire.querySelector("[name='date']");
+        if (checked == true) {
+            champDate.disabled = false;
+            champDate.required = true;
+        } else {
+            champDate.disabled = true;
+            champDate.required = false;
+            champDate.value = "";
+        }
+    } else if (name == "courriel") {
         // Validation personnalisée
+        if (value.endsWith("cmaisonneuve.qc.ca") == false) {
+            declencheur.setCustomValidity("Le champs doit finir par cmaisonneuve");
+        } else {
+            declencheur.setCustomValidity("");
+        }
     }
 
-    const estValide = false;
     // Validation du champ
+    const estValide = declencheur.checkValidity();
+
+    if (estValide == false) {
+        declencheur.classList.add("invalid");
+    } else {
+        declencheur.classList.remove("invalid");
+    }
 
     if (estValide) {
+        console.log("ok");
+
         // Cacher les erreurs au besoin
         // Modifier le résumé (Voir cours 11)
         // Récupérer la section parent
+        const sectionParent = declencheur.closest("section");
+        const champsSection = sectionParent.querySelectorAll("[name]");
+        const tableauValidation = [];
+
+        champsSection.forEach(function (champ) {
+            const estValide = champ.checkValidity();
+            tableauValidation.push(estValide);
+        });
+        console.log(tableauValidation);
+        const sectionInvalide = tableauValidation.includes(false);
+        if (sectionInvalide == true) {
+            sectionParent.querySelector(".bouton[data-direction='1']").classList.add("disabled");
+        }
         // On vérifie la section et on active le bouton suivant au besoin
     }
 }
