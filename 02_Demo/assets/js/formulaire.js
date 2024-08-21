@@ -24,13 +24,14 @@ function init() {
         element.addEventListener("change", onChangementChamp);
     });
 
-    //TODO: Pourquoi focus, blur
     champVille.addEventListener("focus", onFocusRecherche);
     champVille.addEventListener("blur", onBlurRecherche);
     listeVilles.addEventListener("mousedown", function (event) {
-        //TODO: MouseDown arrive avant blur, à choisir avant click
-        //Trouver la ville cliquée et modifier la valeur du champ de recherche
-        //Valider la section
+        const selectionVille = event.target.closest("[data-ville]");
+        if (selectionVille !== null) {
+            champVille.value = selectionVille.dataset.ville;
+            //TODO: Valider section
+        }
     });
 }
 
@@ -51,6 +52,12 @@ function onChangementChamp(evenement) {
     const name = declencheur.name;
     const value = declencheur.value;
     const checked = declencheur.checked;
+
+    declencheur.value = declencheur.value.trim();
+
+    if (name == "code-postal") {
+        declencheur.value = declencheur.value.replace(/([A-z][0-9][A-z])\s?([0-9][A-z][0-9])/, "$1 $2").toUpperCase();
+    }
 
     //Gestion des champs avec exceptions
     if (type == "checkbox") {
@@ -109,17 +116,26 @@ function onChangementChamp(evenement) {
 }
 
 function onFocusRecherche() {
-    //TODO: Ajouter un écouteur événement clavier
-    //TODO: Afficher la liste de choix
+    champVille.addEventListener("keyup", onKeyUpRecherche);
+    listeVilles.classList.remove("invisible");
 }
+
 function onBlurRecherche(event) {
-    //TODO: Enlever un écouteur événement clavier
-    //TODO: Retirer la liste de choix
+    champVille.removeEventListener("keyup", onKeyUpRecherche);
+    listeVilles.classList.add("invisible");
 }
+
 function onKeyUpRecherche(event) {
-    //TODO: Récupérer la valeur saisie dans la recherche
-    //TODO: Afficher les choix dans la liste
-    //TODO: Mettre en minuscule et trim, includes
+    const recherche = champVille.value.toLowerCase();
+    listeVilles.querySelectorAll("[data-ville]").forEach(function (ville) {
+        const comparaison = ville.dataset.ville.toLowerCase().includes(recherche);
+        if (comparaison) {
+            ville.classList.remove("invisible");
+        } else {
+            ville.classList.add("invisible");
+        }
+    });
+    // console.log(event);
 }
 
 //=============================================
