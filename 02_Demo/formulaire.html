@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+        />
+        <link rel="shortcut icon" href="assets/img/logo_vinyle.png" type="image/x-icon" />
+        <link rel="stylesheet" href="assets/css/styles.css" />
+        <script src="assets/js/components/navigation.js" defer></script>
+        <script src="assets/js/formulaire.js" defer></script>
+        <title>Formulaire achat</title>
+    </head>
+    <body>
+        <header>
+            <nav id="nav-principale">
+                <img src="assets/img/logo_vinyle.png" alt="logo" class="logo" />
+                <ul class="nav__liste"></ul>
+            </nav>
+        </header>
+        <main>
+            <form action="" method="get" id="formulaire-principal" autocomplete="off">
+                <section data-page="1">
+                    <h2>Section 1</h2>
+
+                    <div class="groupe-champs">
+                        <label for="nom">Nom</label>
+                        <input type="text" id="nom" name="nom" minlength="3" maxlength="150" required />
+                        <p class="error-message">Vous devez saisir votre nom</p>
+                    </div>
+
+                    <div class="groupe-champs">
+                        <label for="courriel">Courriel</label>
+                        <input type="email" id="courriel" name="courriel" maxlength="50" />
+                        <p class="error-message">Vous devez saisir un courriel valide</p>
+                    </div>
+
+                    <div class="groupe-champs">
+                        <label for="code-postal">Code postal</label>
+                        <input
+                            type="text"
+                            id="code-postal"
+                            code-postal
+                            name="code-postal"
+                            pattern="[A-z][0-9][A-z]\s?[0-9][A-z][0-9]"
+                        />
+                        <p class="error-message">Vous devez saisir un code postal valide</p>
+                    </div>
+
+                    <div class="groupe-champs">
+                        <label for="telephone">Téléphone</label>
+                        <input type="tel" id="telephone" name="telephone" />
+                        <p class="error-message">Vous devez saisir un numéro de téléphone valide</p>
+                    </div>
+
+                    <div class="groupe-champs recherche-villes">
+                        <label for="villes">Recherche de la ville</label>
+                        <input type="search" name="ville" id="villes" autocomplete="false" a />
+                        <ul class="liste-villes invisible">
+                            <li data-ville="Paris">Paris</li>
+                            <li data-ville="Lyon">Lyon</li>
+                            <li data-ville="Marseille">Marseille</li>
+                            <li data-ville="Nantes">Nantes</li>
+                            <li data-ville="Lille">Lille</li>
+                        </ul>
+                    </div>
+                    <nav class="navigation-section">
+                        <div class="bouton" data-direction="-1">Précédent</div>
+                        <div class="bouton disabled" data-direction="1">Suivant</div>
+                    </nav>
+                </section>
+                <section data-page="2">
+                    <h2>Section 2</h2>
+                    <div class="groupe-champs">
+                        <label for="couleur-pref">Couleur préférée</label>
+                        <input type="color" id="couleur-pref" name="couleur-pref" required />
+                        <p class="error-message">Vous devez saisir une couleur, de préférence Tomato :)</p>
+                    </div>
+                    <div class="groupe-champs">
+                        <label for="chance">Nombre chanceux (entre 0 et 100)</label>
+                        <input type="number" id="chance" name="chance" min="0" max="100" step="1" />
+                        <p class="error-message">Vous devez saisir un nombre valide</p>
+                    </div>
+                    <div class="groupe-champs">
+                        <label for="peut-choisir-date">Peut choisir une date</label>
+                        <input type="checkbox" id="peut-choisir-date" name="peut-choisir-date" />
+                    </div>
+                    <div class="groupe-champs">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" name="date" min="2024-08-14" disabled />
+                    </div>
+
+                    <nav class="navigation-section">
+                        <div class="bouton" data-direction="-1">Précédent</div>
+                        <div class="bouton" data-direction="1">Suivant</div>
+                    </nav>
+                </section>
+
+                <section class="resume" data-page="3">
+                    <h2>Résumé</h2>
+                    <p>
+                        Text:
+                        <span data-name="text"></span>
+                    </p>
+                    <p>
+                        Password:
+                        <span data-name="password"></span>
+                    </p>
+                    <p>
+                        Tel:
+                        <span data-name="tel"></span>
+                    </p>
+                    <p>
+                        Email:
+                        <span data-name="email"></span>
+                    </p>
+
+                    <p>
+                        Date:
+                        <span data-name="date"></span>
+                    </p>
+
+                    <p>
+                        Range:
+                        <span data-name="range"></span>
+                    </p>
+                    <p>
+                        Boite à cocher:
+                        <span data-name="checkbox"></span>
+                    </p>
+
+                    <nav class="navigation-section">
+                        <div class="bouton" data-direction="-1">Précédent</div>
+                        <input type="submit" class="bouton" value="Envoyer le formulaire" />
+                    </nav>
+                </section>
+            </form>
+        </main>
+    </body>
+</html>
