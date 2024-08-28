@@ -22,7 +22,7 @@ const conteneurNav = document.querySelector("header nav .nav__liste");
  * Fonction pour initialiser la navigation
  * @returns {void}
  */
-function init() {
+export function init() {
     tableauNavigation.forEach(function (lien) {
         creerElementLien(lien);
     });
@@ -33,7 +33,7 @@ function init() {
  * @param {string} urlAVerifier
  * @returns {boolean} Vrai si la page est active, faux autrement
  */
-function verifierSiPageActive(urlAVerifier) {
+export function verifierSiPageActive(urlAVerifier) {
     // On récupère l'url de la page
     const url = document.documentURI;
     // On divise l'url en tableau avec chaque /
@@ -79,4 +79,4 @@ function creerElementLien(objetLien) {
 // ====== Exécution ======
 
 // Initialisation de la navigation
-init();
+// init();
