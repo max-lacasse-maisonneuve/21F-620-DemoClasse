@@ -1,3 +1,5 @@
+import { init as initNavigation, verifierSiPageActive } from "../components/navigation.js";
+
 const albums = [
     {
         id: 1,
@@ -96,6 +98,7 @@ function init() {
     //Affiche un album différent au chargement de la page
     const albumAleatoire = Math.floor(Math.random() * albums.length);
     afficherDetails(albums[albumAleatoire]);
+    initNavigation();
 }
 
 /**

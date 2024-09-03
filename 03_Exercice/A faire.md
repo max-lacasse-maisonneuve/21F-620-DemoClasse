@@ -1,18 +1,11 @@
-# Exercice - cours 14 - Popup Abonnement à l'infolettre
+# Exercice - cours 15 - Ajouter un carrousel d'images
 
 ## Consignes
 
-Vous devez programmer l'interactivité d'une boite modale qui s'affiche au chargement sur le site web de l'entreprise. Cette boite modale est un formulaire d'abonnement à l'infolettre de l'entreprise.
-
-Une fois que l'utilisateur a rempli le formulaire, vous devez stocker les informations dans le `localStorage` du navigateur. Si l'information est déjà présente dans le `localStorage`, vous ne devez pas afficher la boite modale au rechargement de la page.
+Vous devez programmer l'interactivité d'un carrousel d'images à l'aide d'une classe. Le carrousel doit afficher une image à la fois. Le carrousel doit afficher les images automatiquement à l'infini (lorsque la dernière image est affichée, la première image doit être affichée). Le carrousel doit afficher les images pendant 3 secondes avant de passer à l'image suivante.
 
 ## Étapes
 
 -   Placez le code JavaScript dans un fichier séparé et importez-le dans le fichier JS principal avec `import`.
 -   Placez le code CSS dans un fichier séparé et importez-le dans le fichier CSS principal avec `@import`.
-
--   Afficher une boite modale au chargement de la page à l'aide de JavaScript et de CSS.
--   Le formulaire contient un formulaire, bloquez la soumission automatique du formulaire, stockez les informations dans le `localStorage`.
--   Cachez la boite modale avec JavaScript et CSS.
-
--   Au chargement de la page, vérifiez si l'information est déjà présente dans le `localStorage`. Si c'est le cas, ne pas afficher la boite modale.
+-   Afficher le carrousel au chargement de la page à l'aide de JavaScript et de CSS. Vous n'avez pas à programmer les boutons du carrousel. Nous le ferons la semaine prochaine.

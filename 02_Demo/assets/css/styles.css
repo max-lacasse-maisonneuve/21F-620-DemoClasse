@@ -1,16 +1,19 @@
 /* Placer du plus général au plus spécifique */
 /* Base et variables */
 @import url("./base/reset.css");
-
+@import url("./base/colors.css");
+@import url("./base/typography.css");
 /* Composants individuels */
 @import url("./components/boutons.css");
 @import url("./components/icones.css");
 @import url("./components/popup.css");
+@import url("./components/carrousel.css");
 
 /* Mise en page complexe */
 @import url("./layout/general.css");
 @import url("./layout/accueil.css");
 @import url("./layout/form.css");
+@import url("./layout/a-propos.css");
 
 /* Exceptions */
 @import url("./layout/exceptions.css");

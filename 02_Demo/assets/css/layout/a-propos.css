@@ -1,0 +1,22 @@
+[data-page="a-propos"] {
+    & .section {
+        padding: 50px;
+        width: 100%;
+
+        &.droite {
+            text-align: right;
+        }
+
+        & h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--color-accent);
+        }
+        & p {
+            font-size: 1.5rem;
+            text-transform: initial;
+            font-weight: 600;
+            color: var(--color-dark);
+        }
+    }
+}

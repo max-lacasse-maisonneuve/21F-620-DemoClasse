@@ -11,14 +11,12 @@
             referrerpolicy="no-referrer"
         />
         <link rel="shortcut icon" href="assets/img/logo_vinyle.png" type="image/x-icon" />
-
         <link rel="stylesheet" href="assets/css/styles.css" />
-
         <script type="module" src="assets/js/pages/a-propos.js"></script>
 
         <title>Vinyles | Qui sommes-nous?</title>
     </head>
-    <body>
+    <body data-page="a-propos">
         <header>
             <nav id="nav-principale">
                 <img src="assets/img/logo_vinyle.png" alt="logo" class="logo" />
@@ -26,15 +24,61 @@
             </nav>
         </header>
         <main>
-            <div class="modale-conteneur">
+            <section class="section sans-opacite" id="section1">
+                <h2>Notre Histoire</h2>
+                <p>
+                    Découvrez comment notre passion pour les vinyles a commencé et comment nous avons créé cette
+                    boutique.
+                </p>
+            </section>
+
+            <section class="section droite sans-opacite" id="section2">
+                <h2>Notre Collection</h2>
+                <p>Nous proposons une large gamme de vinyles, des classiques intemporels aux nouveautés.</p>
+                <a href="/">Voir les derniers arrivages</a>
+            </section>
+
+            <div class="carrousel section">
+                <div class="conteneur-image-principale">
+                    <img class="image-principale" src="assets/img/albums/abbey_road.webp" alt="" />
+                </div>
+
+                <!-- Le gabarit à utiliser -->
+                <template id="conteneur-image-navigation">
+                    <div class="conteneur-image-navigation">
+                        <img src="assets/img/albums/aftermath.webp" alt="" />
+                    </div>
+                </template>
+
+                <!-- La liste où placer le clone -->
+                <div class="carrousel-liste-images"></div>
+            </div>
+
+            <section class="section droite sans-opacite" id="section3">
+                <h2>Équipe</h2>
+                <p>
+                    Rencontrez les passionnés qui travaillent derrière les coulisses pour vous offrir les meilleurs
+                    vinyles.
+                </p>
+            </section>
+
+            <section class="section sans-opacite" id="section4">
+                <h2>Nos Valeurs</h2>
+                <p>Nous croyons en la qualité, l'authenticité et la satisfaction de nos clients.</p>
+            </section>
+
+            <section class="section droite sans-opacite" id="section5">
+                <h2>Contact</h2>
+                <p>Vous avez des questions ? N'hésitez pas à nous contacter.</p>
+            </section>
+
+            <div class="modale-conteneur invisible">
                 <div class="modale">
                     <h2 class="modale-header">Titre</h2>
                     <p>Contenu</p>
                     <div class="fermer-modale interactive"><i class="icone fa fa-times"></i>Fermer</div>
                 </div>
             </div>
-
-            
         </main>
     </body>
 </html>
