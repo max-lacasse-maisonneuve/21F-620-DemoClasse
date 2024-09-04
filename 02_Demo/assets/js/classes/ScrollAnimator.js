@@ -1,3 +1,6 @@
+/**
+ * Cette classe permet d'afficher des éléments au défilement de la page
+ */
 class ScrollAnimator {
     constructor(zone, targets) {
         this.zone = zone; // La zone d'intersection, null pour utiliser la fenêtre du navigateur	comme zone d'intersection
