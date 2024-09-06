@@ -20,7 +20,7 @@ function init() {
     });
 
     formulaire.addEventListener("submit", onSubmit);
-    // toutCacher();
+    toutCacher();
     afficherSection();
 }
 
@@ -38,7 +38,7 @@ function onSubmit(evenement) {
 //Désactiver le bouton précédent si on est sur la première section
 //Désactiver le bouton suivant si on est sur la dernière section
 function afficherSection() {
-    // toutCacher();
+    toutCacher();
     sections[sectionActuelle].classList.remove("invisible");
 }
 
