@@ -1,29 +1,55 @@
-// Class Carrousel
-//constructor, afficherImage, avancer, reculer
+/**
+ * Classe Carrousel
+ * Servant à gérer un carrousel d'images
+ */
 class Carrousel {
     constructor(conteneurHTML, tableauImages) {
-        //ConteneurHTML
-        this.conteneurHTML = conteneurHTML;
-        this.imageConteneur = this.conteneurHTML.querySelector(".image-principale");
+        //Variables
+        this.position = 0;
+        let contexteClasse = this;
 
         //Liste images a afficher
         this.tableauImages = tableauImages;
 
-        //position à laquelle je suis rendu dans tableau
-        this.position = 0;
+        //Sélection HTML
+        this.conteneurHTML = conteneurHTML;
+        this.imageConteneur = this.conteneurHTML.querySelector(".image-principale");
 
-        let imageAuDepart = this.tableauImages[this.position];
-        this.afficherImage(imageAuDepart);
+        this.template = this.conteneurHTML.querySelector("template#conteneur-image-navigation");
+        this.listeImages = this.conteneurHTML.querySelector(".carrousel-liste-images");
 
-        console.log(this);
-        let contexteClasse = this;
-
+        //Événements
+        this.conteneurHTML.addEventListener("click", this.onClicCarrousel.bind(contexteClasse));
         window.setInterval(
             function () {
                 this.avancer();
             }.bind(contexteClasse),
             3000
         );
+
+        //Exécution lors de l'instanciation
+        this.afficherImage(this.tableauImages[this.position]);
+    }
+
+    /**
+     * Fonction servant à gérer les clics sur le carrousel
+     * @param {*} evenement
+     */
+    onClicCarrousel(evenement) {
+        //On récupère le bouton cliqué avec closest et on vérifie s'il y a un attribut data-direction
+        let bouton = evenement.target.closest("[data-direction]");
+
+        //Si on a trouvé un bouton
+        if (bouton != null) {
+            let direction = Number(bouton.dataset.direction);
+            console.log(this);
+
+            if (direction == 1) {
+                this.avancer();
+            } else if (direction == -1) {
+                this.reculer();
+            }
+        }
     }
 
     //Fonction qui affiche une image
@@ -31,13 +57,21 @@ class Carrousel {
         this.imageConteneur.src = source;
     }
 
+    /**
+     * Fonction qui permet de faire avancer le carrousel d'une image
+     */
     avancer() {
+        //On incrémente la position
         this.position++;
+
+        //Si on dépasse la fin du tableau, on revient au début
         if (this.position >= this.tableauImages.length) {
             this.position = 0;
         }
 
+        //On récupère l'image à afficher
         let image = this.tableauImages[this.position];
+        //On l'affiche
         this.afficherImage(image);
     }
 
