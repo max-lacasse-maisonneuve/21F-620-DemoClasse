@@ -2,6 +2,17 @@
     & .section {
         padding: 50px;
         width: 100%;
+        /* transform: translateX(0);
+        opacity: 1; */
+
+        & > div {
+            transition: all 1000ms;
+        }
+
+        &.anime > div {
+            transform: translateX(-100%) scale(1.05);
+            opacity: 0;
+        }
 
         &.droite {
             text-align: right;

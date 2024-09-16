@@ -14,6 +14,14 @@ function init() {
     let navigation = document.querySelector("nav");
     let logo = navigation.querySelector("img");
 
+    //permet d'enlever l'animation
+    logo.addEventListener("animationend", function () {
+        logo.classList.remove("anime");
+    });
+
+    logo.addEventListener("click", function () {
+        logo.classList.add("anime");
+    });
     // body.addEventListener("click", onClicElement);
     // header.addEventListener("dblclick", onClicElement);
     // navigation.addEventListener("click", onClicElement);
@@ -32,6 +40,7 @@ function init() {
     let zone = null;
     let cibles = document.querySelectorAll(".section");
     new ScrollAnimator(zone, cibles);
+
     // document.addEventListener("keydown", function (event) {
     //     console.log(event);
     // });
@@ -51,4 +60,5 @@ function init() {
 //         console.log("clic ", compteur);
 //     }
 // }
+
 init();

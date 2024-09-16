@@ -37,13 +37,17 @@ a {
     font-size: 1rem;
     text-decoration: none;
     color: black;
+    transition: all 1000ms;
 }
+
 a:hover {
-    color: rgb(188, 93, 93);
+    font-size: 4rem;
+    color: var(--color-nav-link--hover);
     text-decoration: underline;
 }
+
 a.actif {
-    color: rgb(188, 93, 93);
+    color: var(--color-nav-link--hover);
     text-decoration: underline;
     font-weight: bold;
 }

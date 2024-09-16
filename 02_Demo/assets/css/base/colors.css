@@ -14,3 +14,20 @@
     --color-warning: #ffd207;
     --color-danger: #dc4635;
 }
+
+body[data-theme="nuit"] {
+    --color-primary: #cee0e2;
+    --color-accent: #aba38c;
+
+    --color-light: #000000;
+    --color-dark: #cccccc;
+
+    --color-link: #00aaff;
+    --color-nav-link: tomato;
+    --color-nav-link--hover: color-mix(in oklab, tomato, black 10%);
+
+    --color-success: #76a728;
+    --color-info: #17b8b5;
+    --color-warning: #ffd207;
+    --color-danger: #dc4635;
+}

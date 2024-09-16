@@ -20,13 +20,31 @@ class Carrousel {
 
         //Événements
         this.conteneurHTML.addEventListener("click", this.onClicCarrousel.bind(contexteClasse));
-        window.setInterval(
+        this.interval = window.setInterval(
             function () {
                 this.avancer();
             }.bind(contexteClasse),
             3000
         );
 
+        this.conteneurHTML.addEventListener(
+            "mouseenter",
+            function () {
+                clearInterval(this.interval);
+            }.bind(this)
+        );
+
+        this.conteneurHTML.addEventListener(
+            "mouseleave",
+            function () {
+                this.interval = window.setInterval(
+                    function () {
+                        this.avancer();
+                    }.bind(contexteClasse),
+                    3000
+                );
+            }.bind(this)
+        );
         //Exécution lors de l'instanciation
         this.afficherImage(this.tableauImages[this.position]);
     }

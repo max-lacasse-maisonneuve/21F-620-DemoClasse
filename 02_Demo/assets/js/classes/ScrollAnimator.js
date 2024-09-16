@@ -44,9 +44,9 @@ class ScrollAnimator {
                 //Action à effectuer lorsque l'élément cible entre ou sort de la zone d'intersection
                 // == MODIFIER LE CODE ICI EN FONCTION DE L'EFFET SOUHAITÉ
                 if (intersecte == true) {
-                    element.classList.remove("sans-opacite");
+                    element.classList.remove("anime");
                 } else {
-                    element.classList.add("sans-opacite");
+                    element.classList.add("anime");
                 }
             }.bind(this)
         );

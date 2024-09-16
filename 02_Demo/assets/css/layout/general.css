@@ -1,3 +1,30 @@
+@keyframes logoAnim {
+    0% {
+        /* opacity: 0; */
+        border: 2px solid transparent;
+        transform: scale(1);
+    }
+
+    40% {
+        /* opacity: 1; */
+        border: 2px solid blue;
+        transform: scale(1.1);
+    }
+
+    60% {
+        /* opacity: 1; */
+        border: 2px solid blue;
+
+        transform: scale(1.1);
+    }
+
+    100% {
+        /* opacity: 0; */
+        border: 2px solid transparent;
+        transform: scale(1);
+    }
+}
+
 html,
 body {
     margin: 0;
@@ -7,6 +34,8 @@ body {
     min-width: 100vw;
     display: flex;
     flex-direction: column;
+    background-color: var(--color-light);
+    transition: background-color 350ms;
 }
 
 body {
@@ -47,4 +76,14 @@ main {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+}
+
+.logo {
+    /* transition: all 5000ms; */
+    /* transform: translateX(100px); */
+}
+
+.logo.anime {
+    /* transform: rotateX(360deg); */
+    animation: logoAnim 2500ms ease-in-out;
 }

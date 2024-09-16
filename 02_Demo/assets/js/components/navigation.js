@@ -16,6 +16,7 @@ const tableauNavigation = [
 
 // ====== Variables HTML ======
 const conteneurNav = document.querySelector("header nav .nav__liste");
+const conteneuModeNuit = document.querySelector(".conteneur-mode-nuit");
 
 // ====== Fonctions ======
 /**
@@ -26,6 +27,20 @@ export function init() {
     tableauNavigation.forEach(function (lien) {
         creerElementLien(lien);
     });
+    conteneuModeNuit.addEventListener("click", changerModeNuit);
+
+    let theme = localStorage.getItem("theme");
+    document.body.dataset.theme = theme || "jour";
+}
+
+function changerModeNuit(evenement) {
+    let target = evenement.target;
+    let bouton = target.closest("[data-mode]");
+
+    if (bouton !== null) {
+        document.body.dataset.theme = bouton.dataset.mode;
+        localStorage.setItem("theme", bouton.dataset.mode);
+    }
 }
 
 /**
