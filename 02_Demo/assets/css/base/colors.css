@@ -6,6 +6,8 @@
     --color-dark: #333333;
 
     --color-link: #00aaff;
+    --color-nav-link: tomato;
+    --color-nav-link--hover: color-mix(in oklab, tomato, black 10%);
 
     --color-success: #76a728;
     --color-info: #17b8b5;
