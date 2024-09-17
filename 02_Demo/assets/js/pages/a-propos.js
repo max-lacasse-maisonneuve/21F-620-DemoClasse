@@ -83,6 +83,7 @@ function init() {
 }
 
 function testAnimation() {
+    //Nouveau commentaire
     let tempsActuel = performance.now();
     let tempsEcoule = tempsActuel - compteur;
 
