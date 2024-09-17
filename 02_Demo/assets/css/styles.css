@@ -20,3 +20,8 @@
 @import url("./layout/exceptions.css");
 
 /* TODO: importer les bons fichiers css*/
+h2:first-of-type {
+    width: fit-content;
+    transform-origin: left bottom;
+    position: absolute;
+}
