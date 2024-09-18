@@ -23,5 +23,5 @@
 h2:first-of-type {
     width: fit-content;
     transform-origin: left bottom;
-    position: absolute;
+    /* position: absolut    e; */
 }

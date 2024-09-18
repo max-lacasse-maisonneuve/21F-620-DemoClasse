@@ -50,9 +50,9 @@ function init() {
 
             if (animation == undefined || animation.playState !== "running") {
                 let clesAnimation = [
-                    { color: "blue", opacity: 0.5, transform: "scale(1)" },
-                    { color: "red", opacity: 1, transform: "scale(2)" },
-                    { color: "limegreen", opacity: 0.75, transform: "scale(1)" },
+                    { offset: 0, color: "blue", opacity: 0, transform: "scale(1)" },
+                    { offset: 0.9, color: "red", opacity: 1, transform: "scale(1.1)" },
+                    { offset: 1, color: "limegreen", opacity: 1, transform: "scale(1)" },
                 ];
                 let options = {
                     duration: 5000,
@@ -74,8 +74,8 @@ function init() {
     // setInterval(function () {
     //     console.log("patate");
     // }, 1000);
-    compteur = performance.now();
-    requestAnimationFrame(testAnimation);
+    // compteur = performance.now();
+    // requestAnimationFrame(testAnimation);
 
     // document.addEventListener("keydown", function (event) {
     //     console.log(event);
